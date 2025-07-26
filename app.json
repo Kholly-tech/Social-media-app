@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Skoopos",
-    "slug": "Skoopos",
+    "name": "Skopoos",
+    "slug": "Skopoos",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icons/Skopoos.png",
-    "scheme": "skoopos",
+    "scheme": "skopoos",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -21,14 +21,14 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/icons/icon.png"
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/icons/Skopoos.png",
+          "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
