@@ -135,6 +135,7 @@ const Signup = () => {
             placeholder="Password"
             keyboardType="visible-password"
             id="password"
+            secureTextEntry
             className="mt-2 p-3 border border-gray-300 rounded-lg w-full"
             onChangeText={(text) => handleChange("password", text)}
           />
@@ -143,6 +144,7 @@ const Signup = () => {
             placeholder="Confirm Password"
             keyboardType="visible-password"
             id="cpassword"
+            secureTextEntry
             className="mt-2 p-3 border border-gray-300 rounded-lg w-full"
             onChangeText={(text) => handleChange("cpassword", text)}
           />
