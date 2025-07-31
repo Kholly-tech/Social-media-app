@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { MaterialCommunityIcons, SimpleLineIcons } from "@expo/vector-icons";
 
 type Option = {
   label: string;
@@ -34,20 +35,21 @@ const CustomSelectButton: React.FC<SelectButtonProps> = ({
   return (
     <View className="w-full">
       <TouchableOpacity
-        className="p-3 border border-gray-400 rounded-md bg-white"
+        className="flex-row items-center justify-between p-3 border border-gray-400 rounded-md bg-white"
         onPress={() => setOpen(true)}
         activeOpacity={0.7}
       >
         <Text className="text-base text-gray-800">{selectedLabel}</Text>
+        <SimpleLineIcons name="arrow-down" size={15} color="black" />
       </TouchableOpacity>
       <Modal
         visible={open}
         transparent
-        animationType="fade"
+        animationType="slide"
         onRequestClose={() => setOpen(false)}
       >
         <Pressable className="flex-1" onPress={() => setOpen(false)}>
-          <View className="absolute left-0 right-0 mx-4 top-1/4 border border-gray-400 rounded-md bg-white max-h-44 z-50 shadow-lg self-center w-11/12">
+          <View className="absolute left-0 right-0 mx-4 top-2/3 border border-gray-400 rounded-md bg-white max-h-44 z-50 shadow-lg self-center w-8/12">
             <FlatList
               data={options}
               keyExtractor={(item) => item.value}

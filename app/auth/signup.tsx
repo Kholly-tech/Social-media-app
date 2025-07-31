@@ -1,7 +1,9 @@
+import CustomButton from "@/components/ui/Button";
 import CustomRadioButton from "@/components/ui/RadioButton";
 import CustomSelectButton from "@/components/ui/SelectButton";
 import { dates, months, years } from "@/constants/dateConstants";
 import { icons } from "@/constants/icons";
+import { Link } from "expo-router";
 import React, { useState } from "react";
 import { Image, Text, TextInput, View } from "react-native";
 import { Button } from "react-native-paper";
@@ -45,7 +47,7 @@ const Signup = () => {
         <Text className="text-3xl font-bold text-center">
           Welcome to Skopoos!
         </Text>
-        <Text className="text-lg font-normal text-center mt-2">
+        <Text className="text-lg text-gray-400 font-semibold text-center mt-2">
           Find Purpose, Join Skopoos to communicate with your loved ones.
         </Text>
 
@@ -145,15 +147,15 @@ const Signup = () => {
             onChangeText={(text) => handleChange("cpassword", text)}
           />
 
-          <Button
-            buttonColor="#D83738"
-            textColor="white"
-            className="mt-4"
-            onPress={handleSignUp}
-          >
-            <Text>Sign Up</Text>
-          </Button>
+          <CustomButton text="Sign Up" onPress={handleSignUp} />
         </View>
+
+        <Text className="mt-4 items-center text-center">
+          Have an account? Sign in {""}
+          <Link href="/auth/signin" className="text-[#D83738] font-semibold">
+             here
+          </Link>
+        </Text>
       </View>
     </View>
   );

@@ -18,7 +18,7 @@ export const months = [
   { label: "December", value: "12" },
 ];
 
-export const years = Array.from({ length: 70 }, (_, i) => {
+export const years = Array.from({ length: 50 }, (_, i) => {
     const currentYear = new Date().getFullYear();
   const year = (currentYear - i).toString();
   return { label: year, value: year };
