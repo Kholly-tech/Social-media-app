@@ -5,7 +5,7 @@ import { Image, View } from "react-native";
 
 export default function Index() {
   useEffect(() => {
-    setTimeout(() => router.replace('/auth/signup'), 3000);
+    setTimeout(() => router.replace('/auth/signin'), 3000);
   });
   return (
     <View className="flex-1 items-center justify-center mt-auto">
