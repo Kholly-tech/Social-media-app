@@ -1,7 +1,8 @@
+import Oauth from "@/components/auth/Oauth";
 import CustomButton from "@/components/ui/Button";
 import { icons } from "@/constants/icons";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import React, { useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 
@@ -20,6 +21,7 @@ const Signin = () => {
   const handleSignin = async () => {
     try {
       console.log("Signing in with: ", JSON.stringify(form));
+      router.replace("/home");
     } catch (error) {}
   };
   return (
@@ -65,6 +67,7 @@ const Signin = () => {
 
           <CustomButton text="Continue" onPress={handleSignin} />
 
+          {/* Remember Me */}
           <View className="mt-2 flex-row justify-between items-center">
             <TouchableOpacity
               className="flex flex-row gap-2"
@@ -85,34 +88,7 @@ const Signin = () => {
             </Link>
           </View>
 
-          <View className="items-center mt-8 flex-col space-y-4 gap-4">
-            <TouchableOpacity
-              className="py-4 px-16 w-full flex-row items-center gap-3 border border-gray-300 rounded-xl"
-              onPress={() => console.log("Google Clicked")}
-            >
-              <Image
-                source={icons.googleIcon}
-                resizeMode="cover"
-                className="w-8 h-8 justify-center"
-              />
-              <Text className="text-xl font-semibold text-center">
-                Continue with Google
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              className="py-4 px-16 w-full flex-row items-center gap-3 border border-gray-300 rounded-xl"
-              onPress={() => console.log("Apple Clicked")}
-            >
-              <Image
-                source={icons.appleIcon}
-                resizeMode="cover"
-                className="w-8 h-8 justify-center"
-              />
-              <Text className="text-xl font-semibold text-center">
-                Continue with Apple
-              </Text>
-            </TouchableOpacity>
-          </View>
+          <Oauth />
 
           <Text className="mt-4 items-center text-center">
             Don't have account? {""}

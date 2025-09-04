@@ -1,3 +1,4 @@
+import Oauth from "@/components/auth/Oauth";
 import CustomButton from "@/components/ui/Button";
 import CustomRadioButton from "@/components/ui/RadioButton";
 import CustomSelectButton from "@/components/ui/SelectButton";
@@ -151,6 +152,8 @@ const Signup = () => {
 
           <CustomButton text="Sign Up" onPress={handleSignUp} />
         </View>
+
+        <Oauth />
 
         <Text className="mt-4 items-center text-center">
           Have an account? Sign in {""}
